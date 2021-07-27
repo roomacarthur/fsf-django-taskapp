@@ -14,7 +14,7 @@ from pathlib import Path
 import dj_database_url
 import os
 
-
+development = os.environ.get("DEVELOPMENT", False)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get(
     'SECRET_KEY', 'django-insecure-5xq*y%g)tl*29qtg0y3^x1_*l2c+4824ra21&yz^2e8-sy)abg')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = development
 
 ALLOWED_HOSTS = [
     os.environ.get('HEROKU_HOSTNAME'),
