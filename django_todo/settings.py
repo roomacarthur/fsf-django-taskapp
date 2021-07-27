@@ -15,7 +15,6 @@ import dj_database_url
 import os
 from decouple import config
 
-development = os.environ.get("DEVELOPMENT", False)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = development
+DEBUG = config("DEBUG")
 
 ALLOWED_HOSTS = [
     os.environ.get('HEROKU_HOSTNAME'),
