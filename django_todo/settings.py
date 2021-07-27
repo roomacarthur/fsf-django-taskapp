@@ -29,7 +29,7 @@ SECRET_KEY = ["SECRET_KEY", config("SECRET_KEY")]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", cast=bool, default="False")
 
-ALLOWED_HOSTS = ["127.0.0.1", "HEROKU_HOSTNAME"]
+ALLOWED_HOSTS = [os.environ.get("HEROKU_HOSTNAME"), "127.0.0.1"]
 
 # if development:
 #     ALLOWED_HOSTS = ["127.0.0.1"]
