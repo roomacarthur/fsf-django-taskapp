@@ -82,8 +82,14 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.parse("postgres://oqknnlkvattpko:827381fd16d4ec4b1a975a73d025ba0a46bc0aab479b790410651c237474b8fd@ec2-176-34-105-15.eu-west-1.compute.amazonaws.com:5432/d5psjapc0sm2ql")
 }
+
+# This below introduces the error.
+# DATABASES = {
+#     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+# }
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
